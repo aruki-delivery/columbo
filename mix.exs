@@ -8,7 +8,10 @@ defmodule Columbo.Mixfile do
       description: "Erlang service discovery and tracking system for clusters",
       package: package(),
       source_url: "https://github.com/aruki-delivery/columbo",
-      homepage_url: "https://hex.pm/packages/columbo"]
+      homepage_url: "https://hex.pm/packages/columbo",
+      test_coverage: [tool: ExCoveralls],
+      preferred_cli_env: [coveralls: :test],
+    ]
   end
 
   defp deps(_) do

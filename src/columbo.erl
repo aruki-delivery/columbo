@@ -94,10 +94,13 @@ send_to_nodes(Service, Nodes, Msg) ->
 
 %% init
 init([]) ->
-	process_flag(trap_exit, true),	
+	process_flag(trap_exit, true),
+	error_logger:info_msg("~p:init(~p): Starting columbo...", [?MODULE, []]),
 	create_tables(),
-	{ok, RefreshInterval} = application:get_env(refresh_interval),
-	{ok, GossipInterval} = application:get_env(gossip_interval),
+	error_logger:info_msg("~p:init(~p): fetching refresh_interval...", [?MODULE, []]),
+	{ok, RefreshInterval} = application:get_env(columbo, refresh_interval),
+	error_logger:info_msg("~p:init(~p): fetching gossip_interval...", [?MODULE, []]),
+	{ok, GossipInterval} = application:get_env(columbo, gossip_interval),
 	{ok, RefreshTimer} = timer:send_interval(RefreshInterval, {run_update}),
 	{ok, GossipTimer} = timer:send_interval(GossipInterval, {run_gossip}),
 	{ok, UDPSocket} = columbo_cast:open_socket(),
