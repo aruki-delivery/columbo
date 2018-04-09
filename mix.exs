@@ -3,7 +3,7 @@ defmodule Columbo.Mixfile do
 
   def project do
     [app: :columbo,
-      version: "1.0.1",
+      version: "1.0.2",
       deps: deps(Mix.env()),
       description: "Erlang service discovery and tracking system for clusters",
       package: package(),

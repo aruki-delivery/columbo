@@ -1,7 +1,7 @@
 Expm.Package.new(
   name: "columbo",
   description: "Erlang service discovery and tracking system for clusters",
-  version: "1.0.1",
+  version: "1.0.2",
   keywords: ["erlang", "service", "discovery", "cluster", "clusters"],
   licenses: [[name: "Apache License 2.0"]],
   maintainers: [
