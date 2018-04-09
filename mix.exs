@@ -12,7 +12,13 @@ defmodule Columbo.Mixfile do
   end
 
   defp deps(_) do
-    [{:ex_doc, ">= 0.0.0", only: :dev}]
+    [
+      {:dialyxir, "~> 0.5", only: [:dev], runtime: false},
+      {:distillery, "~> 1.5", runtime: false},
+      {:mix_test_watch, "~> 0.3", only: :dev, runtime: false},
+      {:excoveralls, "~> 0.8", only: :test},
+      {:ex_doc, ">= 0.0.0", only: :dev}
+    ]
   end
 
 
