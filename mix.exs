@@ -13,7 +13,6 @@ defmodule Columbo.Mixfile do
 
   defp deps(_) do
     [
-      {:cclock, "~> 0.1"},
       {:dialyxir, "~> 0.5", only: [:dev], runtime: false},
       {:distillery, "~> 1.5", runtime: false},
       {:mix_test_watch, "~> 0.3", only: :dev, runtime: false},

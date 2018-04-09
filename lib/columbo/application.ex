@@ -11,7 +11,6 @@ defmodule Columbo.Application do
 
         children = [
           supervisor(:columbo_sup, []),
-          supervisor(:cclock_sup, []),
         ]
 
         {:ok, super_pid} = Supervisor.start_link(children, [strategy: :one_for_one, name: Columbo.Endpoint.Supervisor])
