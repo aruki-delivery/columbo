@@ -105,7 +105,7 @@ init([]) ->
 	{ok, GossipTimer} = timer:send_interval(GossipInterval, {run_gossip}),
 	{ok, UDPSocket} = columbo_cast:open_socket(),
 	error_logger:info_msg("Just one more thing, ~p [~p] is starting...\n", [?MODULE, self()]),
-	{ok, MasterNodes} = application:get_env(master_nodes),
+	{ok, MasterNodes} = application:get_env(columbo,master_nodes),
 	{KnownNodes, OnlineNodes} = columbo_update:run(MasterNodes, []),
 	State = #state{known_nodes=KnownNodes, 
 			online_nodes=OnlineNodes, 
