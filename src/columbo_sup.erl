@@ -26,7 +26,7 @@ start_link() ->
 
 init([]) ->
 	COLUMBO_APP = {columbo,{columbo, start_link, []}, permanent, 2000, worker, [columbo]},
-	error_logger:error_msg("~p:init(~p): Starting columbo_sup: ~p", [?MODULE, [], COLUMBO_APP]),
+	error_logger:info_msg("~p:init(~p): Starting columbo_sup: ~p", [?MODULE, [], COLUMBO_APP]),
 	{ok, {{one_for_one, 5, 60}, [COLUMBO_APP]}}.
 
 
