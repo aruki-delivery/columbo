@@ -3,7 +3,8 @@ defmodule Columbo.Mixfile do
 
   def project do
     [app: :columbo,
-      version: "1.0.2",
+      version: "2.0.0",
+      language: :erlang,
       deps: deps(Mix.env()),
       description: "Erlang service discovery and tracking system for clusters",
       package: package(),
@@ -16,20 +17,9 @@ defmodule Columbo.Mixfile do
 
   defp deps(_) do
     [
-      {:dialyxir, "~> 0.5", only: [:dev], runtime: false},
-      {:distillery, "~> 1.5", runtime: false},
-      {:mix_test_watch, "~> 0.3", only: :dev, runtime: false},
-      {:excoveralls, "~> 0.8", only: :test},
       {:ex_doc, ">= 0.0.0", only: :dev}
     ]
   end
-
-
-  def application do
-    [mod: {Columbo.Application, []},
-      extra_applications: [:logger,],]
-  end
-
 
   def package do
     [ maintainers: ["cblage"],
